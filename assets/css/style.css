@@ -1,7 +1,7 @@
 /* Campaign typography: 20–22px copy; supporting text never below 16px. */
 :root{--canvas:#fff;--ink:#102b4e;--muted:#455c73;--blue:#245e9b;--red:#b5121b;--sky:#b9e2ff;--surface:#f0f6fb;--line:#cbdbe8;--sans:Arial,Helvetica,sans-serif}
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:28px;scroll-padding-bottom:110px}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-height,170px) + 20px);scroll-padding-bottom:110px}
 body{margin:0;background:var(--canvas);color:var(--ink);font:20px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
 ::selection{background:var(--sky);color:var(--ink)}
 a{color:inherit;text-underline-offset:5px;touch-action:manipulation}
@@ -34,8 +34,8 @@ em{font-style:normal;color:var(--blue)}
 .text-link{display:inline-flex;gap:15px;align-items:center;min-height:48px;font-size:18px;font-weight:700;line-height:1.5}
 .skip-link{position:fixed;z-index:50;left:15px;top:15px;transform:translateY(-180%);background:var(--ink);color:#fff;padding:14px 20px}
 .skip-link:focus{transform:none}
-.site-header{background:#fff;border-bottom:1px solid var(--line)}
-.header-inner{display:flex;gap:14px;align-items:center;min-height:100px;padding-block:14px}
+.site-header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 3px 12px #102b4e0a;max-height:100svh;overflow-y:auto}
+.header-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 14px;align-items:center;min-height:100px;padding-block:14px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;min-width:0}
 .brand-logo{width:56px;height:56px;flex:0 0 56px;object-fit:contain}
 .brand-name{display:block;font-size:26px;line-height:1.1;font-weight:800;letter-spacing:-1.2px;white-space:nowrap}
@@ -43,8 +43,8 @@ em{font-style:normal;color:var(--blue)}
 .desktop-nav{display:none;align-items:center;gap:25px;font-weight:700;font-size:16px;white-space:nowrap}
 .desktop-nav a{display:inline-flex;align-items:center;min-height:48px;text-decoration:none}
 .desktop-nav a:hover{text-decoration:underline}
-.header-give{display:none;min-width:110px}
-.menu-toggle{width:48px;height:48px;flex:0 0 48px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;border:1px solid var(--line);border-radius:4px;background:none}
+.header-give{display:inline-flex;grid-column:1/-1;grid-row:2;min-height:50px;padding:10px 16px}
+.menu-toggle{grid-column:2;grid-row:1;width:48px;height:48px;flex:0 0 48px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;border:1px solid var(--line);border-radius:4px;background:none}
 .menu-toggle span{width:20px;height:2px;background:var(--ink);transition:transform .15s}
 .menu-toggle[aria-expanded=true] span:first-child{transform:translateY(4.5px) rotate(45deg)}
 .menu-toggle[aria-expanded=true] span:last-child{transform:translateY(-4.5px) rotate(-45deg)}
@@ -77,6 +77,11 @@ em{font-style:normal;color:var(--blue)}
 .current-campus .campus-gallery img{height:auto;aspect-ratio:4/3;background:var(--surface);border-color:var(--line)}
 @media(min-width:768px){.current-campus .campus-gallery{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .hero-media figcaption{color:#d3e4f3;font-size:16px;line-height:1.5;margin-top:15px}
+.hero-current{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:center;margin-top:24px;padding-top:24px;border-top:1px solid #53728d}
+.hero-current a{display:block;min-width:0}
+.hero-current img{display:block;width:100%;height:auto}
+.hero-current figcaption{margin:0}
+.hero-current figcaption strong{display:block;color:#fff;font-size:20px;line-height:1.25;margin-bottom:8px}
 .photo-placeholder{position:relative;display:flex;width:100%;height:100%;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 25px;color:#365a78;background-image:linear-gradient(#557d9f0c 1px,transparent 1px),linear-gradient(90deg,#557d9f0c 1px,transparent 1px);background-size:40px 40px}
 .photo-placeholder::after{content:'';position:absolute;inset:14px;border:1px dashed #7e9cb6;pointer-events:none}
 .placeholder-label{position:absolute;top:27px;left:27px;font-size:16px;font-weight:700;line-height:1.4;text-align:left}
@@ -97,6 +102,14 @@ em{font-style:normal;color:var(--blue)}
 .stat-value>span{display:block;font-size:20px;line-height:1.5;letter-spacing:0;margin-bottom:10px}
 .community-stat>.stat-value+p{margin-top:24px;font-size:22px;line-height:1.5}
 .source-note{font-size:16px;line-height:1.6;color:var(--muted);margin-top:22px}
+.readiness-comparison{padding:30px;background:var(--surface);border-top:4px solid var(--red)}
+.readiness-comparison>figcaption{font-size:16px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;line-height:1.5}
+.readiness-context{font-size:16px;line-height:1.5;color:var(--muted);margin-top:12px}
+.readiness-pair{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;margin-top:28px}
+.readiness-pair strong{display:block;color:var(--blue);font-size:clamp(46px,7vw,84px);letter-spacing:-.065em;line-height:1.1}
+.readiness-pair>div:last-child strong{color:var(--red)}
+.readiness-pair p{font-size:18px;line-height:1.4;margin-top:12px}
+.readiness-versus{font-size:18px;color:var(--muted)}
 .local-capacity{display:grid;gap:32px;margin-top:54px;padding-top:42px;border-top:1px solid var(--line)}
 .capacity-intro h3{font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-.035em;margin-bottom:22px}
 .capacity-intro>p:last-child{font-size:20px;color:var(--muted)}
@@ -228,8 +241,11 @@ em{font-style:normal;color:var(--blue)}
   html{scroll-padding-bottom:25px}
   .wrap{width:min(1280px,calc(100% - 112px))}
   .section{padding-block:104px}
-  .header-inner{min-height:110px;gap:28px}
-  .desktop-nav{display:flex}
+  .header-inner{display:flex;min-height:100px;gap:16px}
+  .header-inner .brand-logo{width:56px;height:56px;flex-basis:56px}
+  .header-inner .brand-name{font-size:26px}
+  .header-give{font-size:16px;white-space:nowrap;gap:12px;padding:12px 16px;flex-shrink:0}
+  .desktop-nav{display:flex;gap:16px}
   .menu-toggle{display:none}
   .hero{padding:64px 0 48px}
   .hero-grid{grid-template-columns:1.12fr 1fr;gap:55px}
