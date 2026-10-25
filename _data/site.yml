@@ -1,64 +1,24 @@
-# Editable site settings. Change values here; do not change the keys on the left.
-# Anything in [TBD: ...] brackets is an open decision. Search the site for "[TBD" before launch.
-
-# Shows a "prototype" banner and review notes. Set to false at launch.
-prototype_banner: true
-
-# Turn on after adding the two font files described in README.md (assets/fonts/).
-custom_fonts: false
-
-name: Greater Baltimore Learning Center
-church_name: Greater Baltimore Church
+# Campaign and contact settings. Photos are detected automatically when uploaded.
+name: Greater Impact Learning Center
 campaign_name: Greater Impact
-campaign_goal_text: "$1 million over two years"
-
-# Hosted Givebutter campaign page (primary Give button target)
 campaign_url: https://givebutter.com/greater-impact-learning-center-campaign-upj3gm
+campaign_goal_text: "$1 million over two years"
+campaign_goal_amount: "$1 million"
+campaign_recipient: "Greater Baltimore Church"
 
-# Givebutter account ID for the updates signup form. Find it in Givebutter under
-# Sharing > Widgets. Leave blank until you have it; the page shows a fallback instead.
-givebutter_account_id: ""
+# Prototype-only contact. Replace with the real monitored address before launch.
+email: partnerships@greaterimpact.example
+prototype_email: true
 
-# Welcome video. Upload the video to YouTube (Unlisted is fine), then paste the part of
-# the address after v= (for example dQw4w9WgXcQ). Leave blank to show the photo instead.
+# Givebutter hosts both giving and campaign updates; no local signup form is needed.
+# Optional welcome video: YouTube ID only. Empty shows hero.jpg or its placeholder.
 video_youtube_id: ""
-video_title: "A short welcome from the Greater Baltimore Learning Center"
+video_title: "A welcome from the Greater Impact Learning Center"
 
-# Dates (planned; depend on permits, approvals, and Maryland licensing)
-construction_start: "January 2027"
-commitments_by: "December 31, 2026"
-camp_opening: "June 2027"
-school_opening: "August 2027"
+# Current campus photographs appear in the hero gallery. Experience images and future concepts are AI-generated and visibly labeled.
+alt_hero: "The current classroom at 5801 Security Boulevard"
+alt_family: "AI-generated illustration of parents and children practicing everyday skills together in a guided class"
+alt_summer: "Illustrative AI-generated image of elementary-age children building a craft-stick bridge at a summer program"
 
-# Location phrase used in the introduction
-location_phrase: "in Gwynn Oak, Baltimore County"
-
-# Photo descriptions for screen readers. Describe what is in each photo once you add it.
-alt_hero: "[TBD: describe the hero photo]"
-alt_roof: "[TBD: describe the roof photo]"
-alt_hvac: "[TBD: describe the heating and cooling photo]"
-alt_rooms: "[TBD: describe the classroom photo]"
-
-# Gift levels tied to what a gift does. Leave empty ([]) until real costs are confirmed;
-# the section stays hidden. To add levels, replace [] with entries like:
-# gift_levels:
-#   - amount: "$50"
-#     text: "Describes what this gift pays for."
-gift_levels: []
-
-# Contact
-street_address: "5801 Security Blvd, Baltimore, MD 21207"
-phone: "[TBD: phone]"
-email: "[TBD: email]"
-
-# Legal identity shown in the footer and Questions. Counsel must approve before launch.
-gift_recipient_legal_name: "Greater Baltimore Church of Christ, Inc."
-ein: "[TBD: EIN]"
-
-# Nondiscrimination notice (IRS Rev. Proc. 75-50 as modified by Rev. Proc. 2019-22).
-# Draft wording; counsel must approve.
-nondiscrimination_notice: "The Greater Baltimore Learning Center admits students of any race, color, national or ethnic origin to all the rights, privileges, programs, and activities generally accorded or made available to students at the school. It does not discriminate on the basis of race, color, national or ethnic origin in administration of its educational policies, admissions policies, scholarship and loan programs, or athletic and other school-administered programs."
-
-# Share preview text (shown when the link is posted or emailed)
-share_title: "Help open the Greater Baltimore Learning Center in 2027"
-share_description: "A new faith-based early learning center for ages 2 to 5 in Gwynn Oak. The roof comes first. Join the Greater Impact campaign."
+share_title: "Help open the Greater Impact Learning Center"
+share_description: "Greater Baltimore Church’s $1 million, two-year capital campaign provides seed funding to open a faith-based, self-sustaining Learning Center. Financial and in-kind gifts welcome."

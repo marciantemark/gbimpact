@@ -1,27 +1,20 @@
 ---
 layout: default
 title: Privacy
-description: How the Greater Baltimore Learning Center website handles information.
+description: How this prototype handles information and external links.
 permalink: /privacy/
 ---
-<div class="sec"><div class="wrap measure" markdown="1">
-
-# Privacy
-
-[TBD: counsel to review this draft before launch]
-
-This website does not collect personal information by itself. It does not run advertising or tracking scripts.
-
-**Giving.** When you give, you are taken to a page run by Givebutter, which processes the payment and records your gift. Givebutter's own [privacy policy](https://givebutter.com/privacy) applies there.
-
-**Updates signup.** If you join the updates list, your information is stored in Givebutter on behalf of {{ site.data.site.gift_recipient_legal_name }}. We use it only to send updates about the campaign and the Learning Center.
-
-**Video.** If this site shows a welcome video, nothing loads from YouTube until you press play. It then loads in YouTube's privacy-enhanced mode, and YouTube's own policies apply.
-
-**Links from emails and social media.** Links we send may include tags (such as the name of the email or post) so we can learn which messages led to gifts. These tags do not identify you personally on this website.
-
-**Questions.** Contact us at {{ site.data.site.email }}.
-
-[Back to the home page]({{ '/' | relative_url }})
-
-</div></div>
+<div class="wrap prose">
+<p class="eyebrow">Greater Impact / Privacy</p>
+<h1>Your visit here.</h1>
+<p>This prototype has no signup form, advertising scripts, analytics, or browser storage. Hosting providers may keep ordinary server access logs.</p>
+<h2>Giving and updates</h2>
+<p>Donation and campaign-update links take you to Givebutter. Information you submit there is handled under <a href="https://givebutter.com/privacy">Givebutter’s privacy policy</a>.</p>
+<h2>Campaign link tags</h2>
+<p>If the address you visited includes campaign tags, this site carries them to Givebutter. These tags describe the source, medium, and campaign of a link. This site does not save them or create a visitor profile.</p>
+<h2>Video</h2>
+<p>If a welcome video is added, YouTube will load only when you press play. Playback uses YouTube’s privacy-enhanced embed; YouTube’s policies apply once it loads.</p>
+<h2>Email</h2>
+<p>The business contact address is an example for this prototype. It will be replaced with a monitored address before launch.</p>
+<p><a href="{{ '/' | relative_url }}">← Back to the campaign</a></p>
+</div>

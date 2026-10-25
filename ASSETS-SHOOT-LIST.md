@@ -1,33 +1,15 @@
-# Photo and Video Shoot List
+# Photos for this page
 
-A phone is enough. Shoot in daylight, hold the phone horizontally, and wipe the lens first. Photos should show the real need honestly; a plain, true picture of an aged roof persuades better than a staged one.
+Use real photos that introduce the center and the places children will learn and play. The public story is about a modern learning setting; avoid close-ups of individual repair needs. Phone photos are fine.
 
-## Photos
+| Filename in `assets/images/` | What to show | Framing |
+| --- | --- | --- |
+| `hero.jpg` | A welcoming view of the building’s exterior or entrance | Leave room around the subject; the crop varies between phones and desktop |
+| `rooms.jpg` | A future learning space | Shoot from a corner, with daylight if possible |
+| `playground.jpg` | The playground and outdoor play space | Show the overall setting rather than individual equipment faults |
 
-Save each as a JPEG, no wider than 1600 pixels, under 400 KB, and upload to `assets/images/` using the exact filename.
+Aim for about 1,600 px across for the hero, 1,000 px for the other photos. Compress JPEGs before upload (roughly 250 KB or less each where practical). Frames use `object-fit: cover`; keep key details toward the center. Change `object-position` in CSS if a particular image needs a different crop.
 
-| Filename | What to capture | Notes |
-|---|---|---|
-| `hero.jpg` | The front of the building in good light, with a friendly foreground (sign, entrance, or the grounds). Used only if there is no video. | Landscape, 16:9 crop works best |
-| `roof.jpg` | The roof or the worst visible damage: stains, patched areas, ponding, or a ceiling leak inside. | Include one wide shot and one close-up; pick the clearer |
-| `hvac.jpg` | The boiler, rooftop units, or an aged thermostat and vents. | Capture a model plate or age marker if visible |
-| `rooms.jpg` | An empty room that will become a classroom, showing its current condition. | Lights on, door open |
-| `people.jpg` | Leaders or volunteers together, or the neighborhood around the campus. | No identifiable children unless a signed release is on file |
+The prototype uses the supplied classroom and hallway photos and Google Earth captures for current conditions. Images under 01–03 illustrate the experiences. Three additional concepts show possible future classroom, summer camp, and playground settings. The family image illustrates life-skills classes for parents and children. To replace an image, update its reference, alt description, and visible caption together in `index.html`. Publish images of identifiable children only with permission. See `IMAGE-NOTES.md` for the current files.
 
-## Welcome video (about 60 seconds)
-
-Film vertically or horizontally, but stay consistent. Use a steady hand or lean the phone on something. Record in a quiet room facing a window.
-
-1. **Who and where (10 seconds).** Name, role, and "We are opening the Greater Baltimore Learning Center in Gwynn Oak."
-2. **The need (15 seconds).** Why neighborhood families need it, in your own words.
-3. **The repairs (15 seconds).** Walk to the roof or the rooms and say what has to be fixed first.
-4. **The ask (15 seconds).** "Repairs begin in January. Please give to the Greater Impact campaign by December 31." Check the dates are confirmed first.
-5. **Close (5 seconds).** "Thank you."
-
-Do not mention loans, financing, or internal figures. Add captions in YouTube so it works with the sound off. Upload as unlisted, then paste the ID into `video_youtube_id`.
-
-## Releases and privacy
-
-- Do not publish a recognizable child without a signed parent release.
-- Do not show license plates, neighbors' homes, or documents with names.
-- Check that no photo reveals security details such as alarm panels or key boxes.
+Optional video: introduce the faith-based mission, how the center will support children and parents, and the learning and play spaces. Invite viewers to help create a modern setting for students to succeed. Add captions in YouTube and put the video ID into `video_youtube_id`; nothing loads before someone chooses to play it.

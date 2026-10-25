@@ -1,8 +1,8 @@
-# Jekyll configuration for the Greater Baltimore Learning Center site.
+# Jekyll configuration for the Greater Impact Learning Center site.
 # GitHub Pages builds this automatically; no workflow file is needed.
 
-title: Greater Baltimore Learning Center
-description: A new faith-based early learning center for ages 2 to 5 in Gwynn Oak, being built by Greater Baltimore Church.
+title: Greater Impact Learning Center
+description: Faith-based learning and family support in Gwynn Oak, founded by Greater Baltimore Church.
 
 # [TBD: set to the final domain, for example https://example.org, once chosen]
 # For a project site before the custom domain is live, set url to
@@ -17,6 +17,7 @@ exclude:
   - README.md
   - LAUNCH-CHECKLIST.md
   - ASSETS-SHOOT-LIST.md
+  - IMAGE-NOTES.md
   - .pages.yml
   - Gemfile
   - Gemfile.lock

@@ -1,33 +1,22 @@
-# Pages CMS configuration (https://pagescms.org/docs/). Untested; adjust after first sign-in.
 media: assets/images
 content:
   - name: settings
-    label: Site settings
+    label: Campaign settings
     type: file
     path: _data/site.yml
     fields:
-      - { name: prototype_banner, label: Show prototype banner, type: boolean }
-      - { name: campaign_url, label: Givebutter campaign link, type: string }
-      - { name: givebutter_account_id, label: Givebutter account ID, type: string }
-      - { name: custom_fonts, label: Use custom fonts (only after adding the two font files), type: boolean }
+      - { name: name, label: Learning Center name, type: string }
       - { name: campaign_name, label: Campaign name, type: string }
-      - { name: campaign_goal_text, label: Campaign goal wording, type: string }
-      - { name: video_youtube_id, label: YouTube video ID (leave empty for none), type: string }
+      - { name: campaign_url, label: Givebutter page (gifts and updates), type: string }
+      - { name: campaign_goal_text, label: Campaign goal description, type: string }
+      - { name: campaign_goal_amount, label: Campaign goal amount, type: string }
+      - { name: campaign_recipient, label: Gift recipient, type: string }
+      - { name: email, label: Business contact email, type: string }
+      - { name: prototype_email, label: Show prototype contact labels, type: boolean }
+      - { name: video_youtube_id, label: Optional YouTube video ID, type: string }
       - { name: video_title, label: Video title, type: string }
-      - { name: construction_start, label: Repairs begin, type: string }
-      - { name: commitments_by, label: Commitments requested by, type: string }
       - { name: alt_hero, label: Hero photo description, type: string }
-      - { name: alt_roof, label: Roof photo description, type: string }
-      - { name: alt_hvac, label: Heating and cooling photo description, type: string }
-      - { name: alt_rooms, label: Classrooms photo description, type: string }
-      - { name: camp_opening, label: Summer camp opening, type: string }
-      - { name: school_opening, label: School opening, type: string }
-      - { name: location_phrase, label: Location wording, type: string }
-      - { name: street_address, label: Street address, type: string }
-      - { name: phone, label: Phone, type: string }
-      - { name: email, label: Email, type: string }
-      - { name: gift_recipient_legal_name, label: Legal name that receives gifts, type: string }
-      - { name: ein, label: EIN, type: string }
-      - { name: nondiscrimination_notice, label: Nondiscrimination notice, type: text }
-      - { name: share_title, label: Share preview title, type: string }
-      - { name: share_description, label: Share preview description, type: text }
+      - { name: alt_family, label: Family image description, type: string }
+      - { name: alt_summer, label: Summer image description, type: string }
+      - { name: share_title, label: Social preview title, type: string }
+      - { name: share_description, label: Social preview description, type: text }

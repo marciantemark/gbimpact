@@ -1,12 +1,7 @@
-{%- comment -%}
-  Shows /assets/images/<file> if it has been uploaded; otherwise shows a visible placeholder.
-  Usage: {% include photo.html file="roof.jpg" alt=s.alt_roof %}
-  Add priority=true for the first photo on the page.
-{%- endcomment -%}
-{%- assign photo_path = "/assets/images/" | append: include.file -%}
-{%- assign photo_found = site.static_files | where: "path", photo_path | first -%}
-{%- if photo_found -%}
-<img src="{{ photo_path | relative_url }}" alt="{{ include.alt | escape }}"{% if include.priority %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
-{%- else -%}
-<div class="ph" role="img" aria-label="Photo to come: {{ include.alt | escape }}"><span>[TBD: add photo named {{ include.file }}]</span></div>
-{%- endif -%}
+{% assign photo_path = '/assets/images/' | append: include.file %}
+{% assign photo_found = site.static_files | where: 'path', photo_path | first %}
+{% if photo_found %}
+<img src="{{ photo_path | relative_url }}" alt="{{ include.alt | escape }}" width="800" height="640" {% if include.priority %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+{% else %}
+<div class="photo-placeholder"><span class="placeholder-label">Photo {% if include.priority %}/ video {% endif %}to come</span><svg class="placeholder-icon" aria-hidden="true"><use href="#{{ include.icon }}"/></svg><span class="placeholder-title">{{ include.title }}</span><span class="placeholder-detail">{{ include.detail }}</span><span class="placeholder-file">{{ include.file }}</span></div>
+{% endif %}

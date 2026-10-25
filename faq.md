@@ -1,34 +1,29 @@
 ---
 layout: default
 title: Questions
-description: Answers about the Greater Baltimore Learning Center and the Greater Impact campaign.
+description: A few answers about the Learning Center and the Greater Impact campaign.
 permalink: /faq/
 ---
-<div class="sec"><div class="wrap measure" markdown="1">
+<div class="wrap prose">
+<p class="eyebrow">Greater Impact / A few answers</p>
+<h1>About the<br>Learning Center.</h1>
 
-# Questions
+<details open><summary>What ages and programs are planned?</summary><p>Our faith-based mission is to help children discover their God-given potential and strengthen their families. Plans include early learning for ages 2–5, life-skills classes for parents and children, and summer learning and enrichment programs for K–6. Early learning includes a Maryland-aligned curriculum, faith-based character education, a full-time nurse, and tuition within Maryland’s Child Care Scholarship range.</p></details>
+<details><summary>Do we need to belong to the church?</summary><p>No. The Learning Center is grounded in Christian faith and open to the whole neighborhood. You don’t need to belong to our church to belong here.</p></details>
+<details><summary>Which images show the actual campus?</summary><p>The opening image is a concept of the future classroom. The classroom and hallway photos in the campus section show the existing space. The outdoor views are Google Earth captures supplied by the church. The images under 01, 02, and 03 are AI-generated illustrations of the planned experiences.</p><p>The future concepts beneath the campus story show a modern preschool classroom, summer camp with learning activities and outdoor fun, and a proposed playground beside a current view of that area. They were generated using the existing classroom and outdoor views as references. Final designs may differ.</p></details>
+<details><summary>Where will the Learning Center be?</summary><p>Our campus at 5801 Security Boulevard in Woodlawn, in a building where children have been learning since 1962. The capital campaign will help prepare it to welcome the next generation.</p></details>
+<details><summary>How will the mission grow?</summary><p>We’re beginning with children and families. Long term, we’re considering other programs that help every person reach their God-given potential. Those future programs are a vision, not a current service offering.</p></details>
+<details><summary>Who is behind the Learning Center?</summary><p>Greater Baltimore Church of Christ, a congregation in Gwynn Oak, Baltimore County, is starting the center as a separate nonprofit with its own board.</p><p>Our executive director brings 28 years as a New York City teacher and assistant principal, two master’s degrees, and a New York State administrator license that transfers to Maryland.</p></details>
+<details><summary>Why does early learning matter?</summary><p>In Maryland’s 2023–24 assessment, 44% of kindergartners arrived ready for school. Readiness was 50% for children who attended formal early learning, compared with 25% for children in home or informal care. These figures show a link, not proof of cause.</p><p>Source: Maryland State Department of Education, <a href="https://files.eric.ed.gov/fulltext/ED672612.pdf#page=5">Readiness Matters, 2023–24</a>.</p></details>
+<details id="local-data" open><summary>Where do the local need figures come from?</summary><p>The chart is Greater Baltimore Church’s planning estimate for ZIP code 21207, where our campus is located. It compares approximately 1,275 children estimated to use center-based care with 944 licensed seats open to children under 5. The estimated difference is about 330 places; estimated demand is about 35% above capacity. It is not a count of children on waiting lists or available vacancies.</p><p>The church supplied these inputs: 3,272 children under 5 (1,858 under 3 and 1,414 ages 3–4), from the <a href="https://data.census.gov/table/ACSDT5Y2023.B09001?g=860XX00US21207">Census ACS 2019–2023 table B09001</a>; a 67% all-parents-working share based on <a href="https://data.census.gov/table/ACSDT5Y2023.B23008?g=860XX00US21207">table B23008</a>; and a 58% center-use planning assumption. B23008 covers children under 6, so applying that share to the under-5 population is an approximation. These inputs yield approximately 1,270 children, presented as roughly 1,275 in the church’s planning estimate.</p><p>The church’s review of <a href="https://childcarecenter.us/maryland/21207_childcare">ChildCareCenter.us listings</a> counted 974 licensed places across 26 programs and excluded 30 school-age-only places, leaving 944. This is the church’s supplied review, not a live count of open seats. The local estimate includes children under 5; our planned early-learning program will serve ages 2–5.</p></details>
+<details><summary>When will it open?</summary><p>Summer camp is planned for June 2027 and the school for August 2027. Dates depend on facility preparation, approvals, and Maryland licensing.</p></details>
+<details><summary>Can I enroll my child?</summary><p>Not yet. The center is not yet licensed or enrolling. <a href="{{ site.data.site.campaign_url }}" data-give>Follow the campaign on Givebutter</a> for updates.</p></details>
+<details><summary>What will my gift help fund?</summary><p>Greater Impact is Greater Baltimore Church’s $1 million capital campaign over two years. The church is raising seed money on behalf of the Learning Center to make opening possible. Gifts fund the initial investment in preparing our building, creating a playground, and providing learning equipment, creating a modern setting where students can succeed.</p></details>
+<details><summary>How will you keep tuition affordable and the center self-sustaining?</summary><p>Tuition will be set within Maryland’s Child Care Scholarship range. The center is designed to be self-sustaining in its ongoing operations while keeping tuition affordable. The capital campaign provides seed funding for opening, distinct from ongoing operating support.</p></details>
+<details><summary>Who receives my gift, and is it tax-deductible?</summary><p>Gifts to this capital campaign are made to Greater Baltimore Church, which is raising seed money on behalf of the Learning Center. Gifts to the church for the campaign are tax-deductible to the extent allowed by law.</p></details>
+<details><summary>Can I help with more than money?</summary><p>Yes. Equipment, materials, professional services, and your team’s skills can all help open the center. <a href="{{ '/#businesses' | relative_url }}">Talk with us about what you can contribute</a>.</p></details>
+<details><summary>Can my business help?</summary><p>Yes. We’re inviting offers of skilled work and materials, company gifts and matching gifts, and sponsorships. <a href="{{ '/#businesses' | relative_url }}">See ways your business can help</a>.</p></details>
+<details><summary>Where do I give or get campaign updates?</summary><p>Both are on the <a href="{{ site.data.site.campaign_url }}" data-give>Greater Impact Givebutter campaign page</a>. Gifts are made to Greater Baltimore Church to provide seed funding for the Learning Center’s opening.</p></details>
 
-### Who receives my gift?
-{{ site.data.site.gift_recipient_legal_name }} receives gifts to the {{ site.data.site.campaign_name }} campaign and uses them for the Learning Center project. [TBD: counsel to approve this answer]
-
-### Is my gift tax-deductible?
-Gifts to {{ site.data.site.gift_recipient_legal_name }} may be tax-deductible to the extent the law allows. Please consult your tax advisor. [TBD: counsel to approve this answer]
-
-### Is the Learning Center licensed or enrolling?
-Not yet. Opening is subject to Maryland licensing. We will share updates as we reach each step.
-
-### Who is welcome?
-{{ site.data.site.nondiscrimination_notice }} [TBD: counsel to approve; add faith-program statement if counsel recommends]
-
-### What will gifts pay for?
-The most urgent needs are a new roof, heating and cooling (HVAC), and bringing classrooms up to code. The building is sound but significantly aged.
-
-### How do I give by check?
-[TBD: mailing instructions]
-
-### How is my information used?
-See the [privacy page]({{ '/privacy/' | relative_url }}).
-
-[Back to the home page]({{ '/' | relative_url }})
-
-</div></div>
+<p style="margin-top:32px"><a href="{{ '/' | relative_url }}">← Back to the campaign</a></p>
+</div>

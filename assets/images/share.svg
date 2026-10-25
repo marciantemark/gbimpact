@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#ffffff"/>
+<rect x="840" width="360" height="630" fill="#102b4e"/>
+<image href="gbc-logo.png" x="64" y="48" width="70" height="70"/>
+<text x="150" y="91" fill="#102b4e" font-family="Arial,sans-serif" font-weight="bold" font-size="32" letter-spacing="-1">Greater Impact</text>
+<text x="64" y="166" fill="#4b5c6e" font-family="Arial,sans-serif" font-size="15" font-weight="bold" letter-spacing="2">FAITH-BASED LEARNING · GWYNN OAK</text>
+<g fill="#102b4e" font-family="Arial,sans-serif" font-size="79" font-weight="bold" letter-spacing="-4">
+<text x="59" y="276" font-size="70">Help open the</text><text x="59" y="366" font-size="70">Greater Impact</text><text x="59" y="456" font-size="70" fill="#245e9b">Learning Center.</text>
+</g>
+<text x="64" y="521" fill="#4b5c6e" font-family="Arial,sans-serif" font-size="22">Faith-based learning. God-given potential.</text>
+<text x="64" y="564" fill="#4b5c6e" font-family="Arial,sans-serif" font-size="17">Greater Baltimore Church · $1 million over two years</text>
+<g transform="translate(913 199)" fill="none" stroke="#a9d8fa" stroke-width="3" stroke-linejoin="round"><path d="M0 0c30-9 63-7 87 13 24-20 57-22 87-13v139c-30-9-63-7-87 13-24-20-57-22-87-13ZM87 13v139"/><path d="M18 32c17-4 34-2 50 7m-50 24c17-4 34-2 50 7m38-31c16-9 33-11 50-7m-50 38c16-9 33-11 50-7"/></g>
+<text x="892" y="430" fill="#ffffff" font-family="Arial,sans-serif" font-size="22" font-weight="bold">Rooted in faith.</text>
+<text x="892" y="462" fill="#ffffff" font-family="Arial,sans-serif" font-size="22" font-weight="bold">Here for families.</text>
+<rect x="64" y="596" width="90" height="6" fill="#b5121b"/>
+</svg>
