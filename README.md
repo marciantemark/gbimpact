@@ -1,6 +1,6 @@
 # Greater Impact
 
-A concise campaign site for the Greater Impact Learning Center: bright white, deep blue, and red; 20–22px body copy, 16px minimum supporting text, bold headings, and spaces for real photos. The homepage focuses on Christian faith, local families’ urgent need, the planned programs, affordable and self-sustaining care, and Greater Baltimore Church’s $1 million capital campaign over two years. The church receives gifts on behalf of the Learning Center as seed funding to make opening possible; ongoing operations are designed to be self-sustaining. Financial and in-kind donations are invited. Leadership credentials, readiness data, and the long-term vision are available in Questions. The public investment story describes the aging building and playground equipment without a repair breakdown. Built with Jekyll and plain HTML/CSS/JavaScript. No framework, remote fonts, analytics, or third-party requests on initial load.
+A concise campaign site for the Greater Baltimore Learning Center: bright white, deep blue, and red; 20–22px body copy, 16px minimum supporting text, bold headings, and spaces for real photos. The homepage focuses on Christian faith, local families’ urgent need, the planned programs, affordable and self-sustaining care, and Greater Baltimore Church’s $1 million capital campaign over two years. The church receives gifts on behalf of the Learning Center as seed funding to make opening possible; ongoing operations are designed to be self-sustaining. Financial and in-kind donations are invited. Leadership credentials, readiness data, and the long-term vision are available in Questions. The public investment story describes the aging building and playground equipment without a repair breakdown. Built with Jekyll and plain HTML/CSS/JavaScript. No framework, remote fonts, analytics, or third-party requests on initial load.
 
 ## Preview
 
@@ -58,3 +58,6 @@ Local-data source review before launch: the church supplied the demand/capacity 
 
 
 Position the project as a Learning Center for children and families, beginning with pre-K readiness for ages 2–5, with summer learning and life-skills classes also planned. Do not use the term preschool in public-facing copy. Classroom concepts show one part of the center, not the whole program.
+
+
+Naming: the organization is Greater Baltimore Learning Center. Greater Impact Campaign is the church-led capital campaign, reflecting Greater Baltimore Church’s desire for greater impact in the community. The existing Givebutter URL remains unchanged.
