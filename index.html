@@ -1,616 +1,282 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GBC Annual Corporate Meeting - February 25, 2026</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background: #000;
-            overflow: hidden;
-            font-family: 'Cinzel', serif;
-            color: #ffd700;
-        }
-        
-        /* Background */
-        .background {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, #0a0a2e 0%, #000 100%);
-        }
-        
-        /* Stars */
-        .stars {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .star {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: #fff;
-            border-radius: 50%;
-            animation: twinkle 3s infinite;
-        }
-        
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
-        }
-        
-        /* Bifrost rainbow swirl */
-        .bifrost {
-            position: fixed;
-            width: 200%;
-            height: 200%;
-            left: -50%;
-            top: -50%;
-            opacity: 0;
-            background: conic-gradient(
-                from 0deg,
-                rgba(255,0,0,0.3),
-                rgba(255,127,0,0.3),
-                rgba(255,255,0,0.3),
-                rgba(0,255,0,0.3),
-                rgba(0,0,255,0.3),
-                rgba(75,0,130,0.3),
-                rgba(148,0,211,0.3),
-                rgba(255,0,0,0.3)
-            );
-            animation: rotateBifrost 8s linear infinite;
-            pointer-events: none;
-        }
-        
-        .bifrost.active {
-            opacity: 0.4;
-        }
-        
-        @keyframes rotateBifrost {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        /* Lightning flash */
-        .lightning {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            background: radial-gradient(circle, rgba(255,255,255,0.4), transparent);
-            pointer-events: none;
-        }
-        
-        .lightning.flash {
-            animation: lightningFlash 0.3s;
-        }
-        
-        @keyframes lightningFlash {
-            0%, 100% { opacity: 0; }
-            10%, 30%, 50% { opacity: 1; }
-        }
-        
-        /* Start screen */
-        .start-screen {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            background: #000;
-        }
-        
-        .start-screen.hidden {
-            display: none;
-        }
-        
-        .start-screen h1 {
-            font-size: 3em;
-            color: #ffd700;
-            text-align: center;
-            margin-bottom: 1em;
-            text-shadow: 0 0 30px #ffd700;
-        }
-        
-        .start-screen .instructions {
-            color: #aaa;
-            font-size: 1.2em;
-            text-align: center;
-            max-width: 800px;
-            line-height: 1.6;
-            margin-bottom: 2em;
-        }
-        
-        .start-button {
-            padding: 1.5em 3em;
-            background: linear-gradient(135deg, #ffd700, #ff8c00);
-            color: #000;
-            border: none;
-            font-size: 1.5em;
-            font-weight: 700;
-            cursor: pointer;
-            font-family: 'Cinzel', serif;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            box-shadow: 0 0 30px #ffd700;
-            transition: all 0.3s;
-        }
-        
-        .start-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 50px #ffd700;
-        }
-        
-        /* Content container */
-        .content {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            z-index: 10;
-        }
-        
-        .content.active {
-            display: flex;
-        }
-        
-        /* Segments */
-        .segment {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            padding: 3em;
-        }
-        
-        .segment.show {
-            animation: fadeIn 1s forwards;
-        }
-        
-        .segment.hide {
-            animation: fadeOut 0.5s forwards;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        
-        @keyframes fadeOut {
-            from { opacity: 1; }
-            to { opacity: 0; }
-        }
-        
-        /* Typography */
-        .segment h1 {
-            font-size: 5em;
-            font-weight: 900;
-            color: #ffd700;
-            text-shadow: 0 0 40px #ffd700, 0 0 80px #ffd700;
-            margin: 0.2em 0;
-            letter-spacing: 0.08em;
-            line-height: 1.2;
-        }
-        
-        .segment h2 {
-            font-size: 3.5em;
-            font-weight: 700;
-            color: #fff;
-            text-shadow: 0 0 30px #00d4ff;
-            margin: 0.3em 0;
-        }
-        
-        .segment h3 {
-            font-size: 2.8em;
-            font-weight: 600;
-            color: #ddd;
-            margin: 0.3em 0;
-            line-height: 1.4;
-        }
-        
-        .segment h4 {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: #ffd700;
-            margin: 0.3em 0;
-        }
-        
-        .segment p {
-            font-size: 2em;
-            color: #ddd;
-            line-height: 1.6;
-            max-width: 1100px;
-            margin: 0.5em auto;
-        }
-        
-        .emphasis {
-            color: #ffd700;
-            font-weight: 700;
-            text-shadow: 0 0 20px #ffd700;
-        }
-        
-        .date {
-            font-size: 4em !important;
-            color: #ff8c00;
-            text-shadow: 0 0 40px #ff8c00;
-            font-weight: 900;
-        }
-        
-        /* Years animation */
-        .years-container {
-            display: flex;
-            align-items: center;
-            gap: 0.3em;
-            margin: 0.5em 0;
-        }
-        
-        .years {
-            font-size: 7em;
-            font-weight: 900;
-            color: #ffd700;
-            text-shadow: 0 0 60px #ffd700;
-        }
-        
-        .arrow {
-            font-size: 5em;
-            color: #00d4ff;
-            text-shadow: 0 0 30px #00d4ff;
-        }
-        
-        /* Building image */
-        .building-image {
-            max-width: 50%;
-            max-height: 50%;
-            opacity: 0;
-            margin: 1em 0;
-            filter: drop-shadow(0 0 40px rgba(255, 215, 0, 0.6));
-        }
-        
-        .building-image.show {
-            animation: buildingReveal 2s forwards;
-        }
-        
-        @keyframes buildingReveal {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-                filter: drop-shadow(0 0 0px rgba(255, 215, 0, 0));
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-                filter: drop-shadow(0 0 60px rgba(255, 215, 0, 0.8));
-            }
-        }
-        
-        /* Logo */
-        .logo {
-            max-width: 450px;
-            max-height: 450px;
-            opacity: 0;
-            filter: drop-shadow(0 0 60px rgba(255, 215, 0, 1));
-        }
-        
-        .logo.show {
-            animation: logoReveal 2s forwards, logoPulse 3s ease-in-out infinite 2s, logoFadeOut 1.5s forwards 4.5s;
-        }
-        
-        @keyframes logoReveal {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
-        @keyframes logoPulse {
-            0%, 100% { 
-                filter: drop-shadow(0 0 60px rgba(255, 215, 0, 1));
-            }
-            50% { 
-                filter: drop-shadow(0 0 80px rgba(255, 215, 0, 1));
-            }
-        }
-        
-        @keyframes logoFadeOut {
-            from {
-                opacity: 1;
-            }
-            to {
-                opacity: 0;
-            }
-        }
-        
-        /* Music credit - FIXED: Added the dot! */
-        .music-credit {
-            position: fixed !important;
-            bottom: 10px !important;
-            left: 50% !important;
-            transform: translateX(-50%) !important;
-            font-size: 9px !important;
-            font-family: Arial, Helvetica, sans-serif !important;
-            color: #555 !important;
-            text-align: center !important;
-            opacity: 0.8 !important;
-            max-width: 90% !important;
-            font-weight: 400 !important;
-            line-height: 1.3 !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-        
-        /* Deep blue background for logo */
-        .deep-blue-bg {
-            background: radial-gradient(circle at center, #0a1a4d 0%, #000 100%);
-        }
-        
-        /* Scripture style */
-        .scripture {
-            font-size: 2.5em !important;
-            font-style: italic;
-            color: #bbb;
-            line-height: 1.6;
-            margin: 1em 0 !important;
-            max-width: 900px;
-        }
-        
-        .reference {
-            font-size: 2em !important;
-            color: #ffd700;
-            margin: 0.5em 0 !important;
-            font-weight: 600;
-        }
-        
-        /* Agenda list */
-        .agenda-list {
-            list-style: none;
-            font-size: 1.8em;
-            color: #ddd;
-            margin: 1em 0;
-            line-height: 1.8;
-        }
-        
-        .agenda-list li {
-            margin: 0.4em 0;
-        }
-        
-        .agenda-list .highlight {
-            color: #ffd700;
-            font-weight: 700;
-        }
-    </style>
-</head>
-<body>
-    <!-- Background layers -->
-    <div class="background"></div>
-    <div class="stars" id="stars"></div>
-    <div class="bifrost" id="bifrost"></div>
-    <div class="lightning" id="lightning"></div>
-    
-    <!-- Start Screen -->
-    <div class="start-screen" id="startScreen">
-        <h1>GBC Annual Corporate Meeting<br/>Announcement</h1>
-        <div class="instructions">
-            <p><strong>Complete Auto-Play Video</strong></p>
-            <p>1. Start your screen recording</p>
-            <p>2. Click START below</p>
-            <p>3. Video plays automatically with music</p>
-            <p>4. Scripture at 18s, logo at 21s, fades at 25.5s</p>
-            <p>Total: 27 seconds (matches your music!)</p>
-        </div>
-        <button class="start-button" onclick="startPresentation()">START</button>
+---
+layout: default
+description: A new faith-based early learning center for ages 2 to 5 in Gwynn Oak. The roof comes first. Join the Greater Impact campaign.
+---
+{%- assign s = site.data.site -%}
+
+<section class="sec sec--ink hero" aria-labelledby="top">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="campaign-name">{{ s.campaign_name }} campaign</p>
+      <h1 id="top">{{ s.name }}</h1>
+      <p class="lead">
+        In the neighborhoods closest to our campus {{ s.location_phrase }}, we estimate more young children
+        need child care than there are licensed seats. We are opening an early learning center that prepares
+        children for kindergarten, at a tuition working families can manage, in {{ s.school_opening }}.
+        The roof comes first.
+      </p>
+      <p class="cta-row">
+        <a class="btn btn-gold btn-lg" href="{{ s.campaign_url }}" data-give target="_blank" rel="noopener">Give to the {{ s.campaign_name }} campaign</a>
+        <a class="btn btn-line btn-lg" href="#stay-informed">Get updates</a>
+      </p>
     </div>
-    
-    <!-- Main Content -->
-    <div class="content" id="content">
-        <!-- Segment 1: The Journey (0-4 sec) -->
-        <div class="segment" id="segment1">
-            <h3>From the founding in</h3>
-            <div class="years-container">
-                <span class="years">2003</span>
-                <span class="arrow">  to  </span>
-                <span class="years">2026</span>
-            </div>
-            <h1>A New Chapter Begins</h1>
-        </div>
-        
-        <!-- Segment 2: The Meeting (4-9 sec) -->
-        <div class="segment" id="segment2">
-            <h3>It is a time of <span class="emphasis">expansion</span></h3>
-            <h2 style="margin-top: 1em;">Annual Corporate Meeting</h2>
-            <p class="date">February 25, 2026 7:30 PM</p>
-            <ul class="agenda-list">
-                <li><h4>Agenda</h4></li>
-                <li>Annual Financial Review</li>
-                <li>Board Highlights</li>
-                <li>Leadership Highlights</li>
-                <li>Board Elections</li>
-                <li class="highlight">Articles of Incorporation Amendment</li>
-                <li style="font-size: 0.9em; color: #aaa; font-style: italic;">(First time since 2003)</li>
-            </ul>
-        </div>
-        
-        <!-- Segment 3: The Why (9-14 sec) -->
-        <div class="segment" id="segment3">
-            <img id="buildingImg" class="building-image" alt="Church Building">
-            <h1 style="font-size: 3.5em; margin-top: 0.5em;">We Purchased a Building</h1>
-            <h2>Our Mission is Expanding</h2>
-            <p style="font-size: 1.8em; margin-top: 0.5em;">Legal counsel recommends updating<br/>our founding documents</p>
-        </div>
-        
-        <!-- Segment 4: Call to Action (14-18 sec) -->
-        <div class="segment" id="segment4">
-            <h1 style="font-size: 6em;">Your Participation</h1>
-            <h1 style="font-size: 6em;" class="emphasis">Is Essential</h1>
-        </div>
-        
-        <!-- Segment 5: Scripture (18-21 sec) -->
-        <div class="segment deep-blue-bg" id="segment5">
-            <p class="scripture">"The word of God continued<br/>to spread and flourish"</p>
-            <p class="reference">— Acts 12:24 —</p>
-        </div>
-        
-        <!-- Segment 6: Logo Only (21-27 sec) -->
-        <div class="segment deep-blue-bg" id="segment6">
-            <img id="logoImg" class="logo" alt="GBC Logo">
-            <p class="date">February 25, 2026 7:30 PM</p>
-            <p class="music-credit">Legendary Epic Heroic Cinematic Music by Alex-Productions (No Copyright Music) Free Music | Heroic</p>
-        </div>
+
+    <div class="hero-media">
+      <div class="frame">
+        {%- if s.video_youtube_id != "" %}
+        <button class="play" type="button" data-video="{{ s.video_youtube_id }}" data-title="{{ s.video_title | escape }}">
+          <span class="play-icon" aria-hidden="true"></span>
+          <span class="play-text">Watch the welcome video</span>
+        </button>
+        {%- else %}
+        <div class="photo">{% include photo.html file="hero.jpg" alt=s.alt_hero priority=true %}</div>
+        {%- endif %}
+      </div>
+      {%- if s.prototype_banner and s.video_youtube_id == "" %}
+      <p class="proto-note">[TBD: a 60-second phone video goes here once you add its YouTube ID in _data/site.yml. See ASSETS-SHOOT-LIST.md.]</p>
+      {%- endif %}
     </div>
-    
-    <!-- Audio -->
-    <audio id="bgMusic" preload="auto">
-        <!-- Music file will be loaded via JavaScript -->
-    </audio>
-    
-    <script>
-        // Create starfield
-        const starsContainer = document.getElementById('stars');
-        for (let i = 0; i < 150; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            star.style.left = Math.random() * 100 + '%';
-            star.style.top = Math.random() * 100 + '%';
-            star.style.animationDelay = Math.random() * 3 + 's';
-            starsContainer.appendChild(star);
-        }
-        
-        // Timing sequence - Total 27 seconds with scripture at 18-21 sec
-        const sequence = [
-            { segment: 1, duration: 4000, effects: ['lightning', 'bifrost'] },      // 0-4 sec (The Journey)
-            { segment: 2, duration: 5000, effects: ['bifrost'] },                   // 4-9 sec (Meeting + agenda)
-            { segment: 3, duration: 5000, effects: ['lightning', 'showBuilding'] }, // 9-14 sec (Building photo)
-            { segment: 4, duration: 4000, effects: ['lightning', 'bifrost'] },      // 14-18 sec (Participation)
-            { segment: 5, duration: 3000, effects: ['bifrost'] },                   // 18-21 sec (Scripture)
-            { segment: 6, duration: 6000, effects: ['bifrost', 'showLogo'] }        // 21-27 sec (Logo only)
-        ];
-        
-        let currentStep = 0;
-        const bifrost = document.getElementById('bifrost');
-        const lightning = document.getElementById('lightning');
-        
-        function triggerLightning() {
-            lightning.classList.add('flash');
-            setTimeout(() => lightning.classList.remove('flash'), 300);
-        }
-        
-        function activateBifrost() {
-            bifrost.classList.add('active');
-        }
-        
-        function deactivateBifrost() {
-            bifrost.classList.remove('active');
-        }
-        
-        function showBuilding() {
-            const building = document.getElementById('buildingImg');
-            setTimeout(() => {
-                building.classList.add('show');
-            }, 500);
-        }
-        
-        function showLogo() {
-            const logo = document.getElementById('logoImg');
-            // Logo appears immediately with fade-in animation
-            setTimeout(() => {
-                logo.classList.add('show');
-            }, 500);
-        }
-        
-        function runSegment(index) {
-            if (index >= sequence.length) return;
-            
-            const step = sequence[index];
-            const segment = document.getElementById(`segment${step.segment}`);
-            
-            // Hide previous segment
-            if (index > 0) {
-                const prevSegment = document.getElementById(`segment${sequence[index-1].segment}`);
-                prevSegment.classList.add('hide');
-                setTimeout(() => {
-                    prevSegment.style.display = 'none';
-                }, 500);
-            }
-            
-            // Show current segment
-            segment.style.display = 'flex';
-            setTimeout(() => {
-                segment.classList.add('show');
-            }, 50);
-            
-            // Trigger effects
-            step.effects.forEach(effect => {
-                if (effect === 'lightning') triggerLightning();
-                if (effect === 'bifrost') activateBifrost();
-                if (effect === 'showBuilding') showBuilding();
-                if (effect === 'showLogo') showLogo();
-            });
-            
-            // Schedule next segment
-            setTimeout(() => {
-                deactivateBifrost();
-                runSegment(index + 1);
-            }, step.duration);
-        }
-        
-        function startPresentation() {
-            // Hide start screen
-            document.getElementById('startScreen').classList.add('hidden');
-            
-            // Show content
-            document.getElementById('content').classList.add('active');
-            
-            // Start music
-            const music = document.getElementById('bgMusic');
-            music.play().catch(e => {
-                console.log('Music autoplay may be blocked. Click to enable.');
-            });
-            
-            // Start visual sequence
-            runSegment(0);
-        }
-        
-        // Load user files
-        window.addEventListener('DOMContentLoaded', function() {
-            // Set building image
-            document.getElementById('buildingImg').src = 'GBC-bldg.png';
-            
-            // Set logo image
-            document.getElementById('logoImg').src = 'GBC_logo.png';
-            
-            // Set music file
-            document.getElementById('bgMusic').src = 'GBC-Video.mp3';
-        });
-        
-        // Press R to restart
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'r' || e.key === 'R') {
-                location.reload();
-            }
-        });
-    </script>
-</body>
-</html>
+  </div>
+</section>
+
+<section class="deadline" aria-label="Campaign deadline">
+  <div class="wrap">
+    <p>
+      To open in {{ s.school_opening }}, repairs must begin in {{ s.construction_start }}.
+      We are asking for commitments by {{ s.commitments_by }}.
+    </p>
+    {%- if s.prototype_banner %}
+    <p class="proto-note proto-note--on-gold">[TBD: confirm these dates after the October 23 Board session]</p>
+    {%- endif %}
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="need">
+  <div class="wrap split">
+    <div class="measure">
+      <h2 id="need">The need in our neighborhoods</h2>
+      <p>
+        Nearly three in four young children within about 20 minutes of our campus live in homes where every
+        parent works. In the ZIP codes closest to us, we estimate more children need care than there are
+        licensed seats.
+      </p>
+      <p>
+        What happens before kindergarten matters. Only 44% of Maryland kindergartners arrive ready for school.
+        Children who attended a formal early learning program are twice as likely to be ready as children in
+        home or informal care.
+      </p>
+      <p class="small">
+        Sources: Maryland State Department of Education,
+        <a href="https://marylandpublicschools.org/Documents/reports/MSDE-Readiness-Matters-Report-2024-A.pdf">Readiness Matters Report 2023-24</a>
+        (the figures show a link, not proof of cause); Greater Baltimore Church analysis of U.S. Census Bureau
+        American Community Survey 2019-2023 and state child care licensing data (estimates).
+        [TBD: Mark to confirm these figures may be shown publicly]
+      </p>
+    </div>
+
+    <figure class="bars">
+      <figcaption>Share of Maryland kindergartners ready for school, 2023-24</figcaption>
+      <div class="bar-row">
+        <p class="bar-label">Attended a formal early learning program</p>
+        <div class="track"><div class="fill fill--gold" style="--v:50%"><b>50%</b></div></div>
+      </div>
+      <div class="bar-row">
+        <p class="bar-label">All Maryland kindergartners</p>
+        <div class="track"><div class="fill fill--ink" style="--v:44%"><b>44%</b></div></div>
+      </div>
+      <div class="bar-row">
+        <p class="bar-label">Home or informal care</p>
+        <div class="track"><div class="fill fill--crimson" style="--v:25%"><b>25%</b></div></div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section class="sec sec--stone" aria-labelledby="first">
+  <div class="wrap">
+    <div class="measure">
+      <h2 id="first">What comes first</h2>
+      <p>
+        The building is sound but significantly aged. Three things must be finished before a single child can
+        walk in. Our first gifts go to these repairs, starting with the roof.
+      </p>
+    </div>
+
+    <div class="repairs">
+      <article class="repair">
+        <div class="photo">{% include photo.html file="roof.jpg" alt=s.alt_roof %}</div>
+        <div class="repair-text">
+          <h3>A new roof</h3>
+          <p>A dry, safe building starts overhead. The roof is one of our most pressing needs.</p>
+        </div>
+      </article>
+      <article class="repair">
+        <div class="photo">{% include photo.html file="hvac.jpg" alt=s.alt_hvac %}</div>
+        <div class="repair-text">
+          <h3>Heating and cooling</h3>
+          <p>Young children need classrooms that stay comfortable in Baltimore winters and summers.</p>
+        </div>
+      </article>
+      <article class="repair">
+        <div class="photo">{% include photo.html file="rooms.jpg" alt=s.alt_rooms %}</div>
+        <div class="repair-text">
+          <h3>Classrooms that meet current code</h3>
+          <p>Every room has to be safe, inspected, and ready for licensing before the first day.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="children">
+  <div class="wrap">
+    <div class="measure">
+      <h2 id="children">What children will experience</h2>
+    </div>
+    <dl class="facts">
+      <div>
+        <dt>Ready for kindergarten</dt>
+        <dd>A pre-K readiness curriculum aligned to Maryland's early learning standards.</dd>
+      </div>
+      <div>
+        <dt>Faith and character</dt>
+        <dd>Faith-based education that builds character as well as skill.</dd>
+      </div>
+      <div>
+        <dt>Care through the year</dt>
+        <dd>Summer enrichment for school-age children, opening {{ s.camp_opening }}.</dd>
+      </div>
+      <div>
+        <dt>A nurse on site</dt>
+        <dd>A full-time school nurse will serve the children.</dd>
+      </div>
+      <div>
+        <dt>Tuition families can manage</dt>
+        <dd>Tuition will be set within the range of Maryland's Child Care Scholarship, so working families do not have to choose between cost and quality.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="sec sec--stone" aria-labelledby="lead">
+  <div class="wrap split">
+    <div class="measure">
+      <h2 id="lead">Who will lead it</h2>
+      <p>
+        Our executive director spent 28 years as a New York City teacher and assistant principal. She holds
+        two master's degrees and a New York State administrator license that transfers to Maryland.
+        [TBD: confirm wording and what may be shared publicly]
+      </p>
+      <p>The Learning Center will have its own board of directors.</p>
+    </div>
+    <div class="photo photo--wide">{% include photo.html file="people.jpg" alt="[TBD: describe the photo of leaders or the community]" %}</div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="timeline">
+  <div class="wrap">
+    <div class="measure">
+      <h2 id="timeline">Timeline</h2>
+    </div>
+    <ol class="steps">
+      <li><strong>{{ s.construction_start }}</strong> Roof, heating and cooling, and code repairs begin.</li>
+      <li><strong>{{ s.camp_opening }}</strong> Summer camp opens.</li>
+      <li><strong>{{ s.school_opening }}</strong> The school year begins.</li>
+    </ol>
+    <p class="small measure">Dates depend on permits, approvals, and Maryland licensing. The Learning Center is not yet licensed or enrolling.</p>
+  </div>
+</section>
+
+<section class="sec sec--ink" id="give" aria-labelledby="ways">
+  <div class="wrap measure">
+    <h2 id="ways">Give to the {{ s.campaign_name }} campaign</h2>
+    <p class="big">
+      Our goal is {{ s.campaign_goal_text }}. Your gift builds the foundation once. It does not become an
+      ongoing subsidy, because the school is planned to cover its own operating costs once it is open.
+      [TBD: confirm this sentence matches the Board's financial plan]
+    </p>
+
+    {%- if s.gift_levels and s.gift_levels.size > 0 %}
+    <ul class="levels">
+      {%- for level in s.gift_levels %}
+      <li><strong>{{ level.amount }}</strong> {{ level.text }}</li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+
+    <p class="cta-row">
+      <a class="btn btn-gold btn-lg" href="{{ s.campaign_url }}" data-give target="_blank" rel="noopener">Give to the {{ s.campaign_name }} campaign</a>
+    </p>
+    <p class="small">
+      Give once or monthly [TBD: confirm monthly giving is turned on in Givebutter]. To give by check,
+      [TBD: mailing instructions]. Gifts are received by {{ s.gift_recipient_legal_name }}
+    </p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="partners">
+  <div class="wrap">
+    <div class="measure">
+      <h2 id="partners">For businesses and community partners</h2>
+      <p>Local businesses can help in three ways.</p>
+    </div>
+    <dl class="facts facts--three">
+      <div>
+        <dt>Do the work or donate materials</dt>
+        <dd>We need roofing, heating and cooling, electrical, plumbing, and carpentry. [TBD: how in-kind offers are reviewed]</dd>
+      </div>
+      <div>
+        <dt>Give or match</dt>
+        <dd>Company gifts go through the same campaign page. If your company matches employee gifts, ask your human resources team how to submit.</dd>
+      </div>
+      <div>
+        <dt>Sponsor</dt>
+        <dd>[TBD: sponsorship and recognition options]</dd>
+      </div>
+    </dl>
+    <p class="measure">
+      To talk with us, {% unless s.email contains "TBD" %}write to <a href="mailto:{{ s.email }}">{{ s.email }}</a>{% else %}contact us at {{ s.email }}{% endunless %}.
+      Tax treatment of in-kind gifts varies; please check with your advisor.
+    </p>
+  </div>
+</section>
+
+<section class="sec sec--stone" aria-labelledby="questions">
+  <div class="wrap measure">
+    <h2 id="questions">Questions</h2>
+    <details>
+      <summary>Who receives my gift?</summary>
+      <p>
+        {{ s.gift_recipient_legal_name }} receives gifts to the {{ s.campaign_name }} campaign and uses them
+        for the Learning Center project. [TBD: counsel to approve this answer]
+      </p>
+    </details>
+    <details>
+      <summary>Is my gift tax-deductible?</summary>
+      <p>
+        Gifts to {{ s.gift_recipient_legal_name }} may be tax-deductible to the extent the law allows. Please
+        consult your tax advisor. [TBD: counsel to approve this answer]
+      </p>
+    </details>
+    <details>
+      <summary>Is the Learning Center licensed or enrolling?</summary>
+      <p>Not yet. Opening is subject to Maryland licensing. We will share updates as we reach each step.</p>
+    </details>
+    <p><a href="{{ '/faq/' | relative_url }}">See all questions</a></p>
+  </div>
+</section>
+
+<section class="sec" id="stay-informed" aria-labelledby="updates">
+  <div class="wrap measure">
+    <h2 id="updates">Get updates</h2>
+    <p>Hear when repairs begin, when we reach milestones, and when the doors open. This is an updates list only.</p>
+    {%- if s.givebutter_account_id != "" %}
+    <div class="signup">
+      <givebutter-signup-form account="{{ s.givebutter_account_id }}"></givebutter-signup-form>
+    </div>
+    {%- else %}
+    <p class="notice">[TBD: the signup form appears here once the Givebutter account ID is added in _data/site.yml]</p>
+    {%- endif %}
+    <p class="small">We use your information only to send updates. See our <a href="{{ '/privacy/' | relative_url }}">privacy page</a>.</p>
+  </div>
+</section>

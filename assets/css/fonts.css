@@ -1,0 +1,18 @@
+/* Loaded only when custom_fonts: true in _data/site.yml.
+   Requires these two files in assets/fonts/ (see README.md):
+   bitter-latin-wght-normal.woff2 and source-sans-3-latin-wght-normal.woff2
+   Both typefaces are free under the SIL Open Font License. */
+@font-face {
+  font-family: "Bitter";
+  src: url("../fonts/bitter-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../fonts/source-sans-3-latin-wght-normal.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
