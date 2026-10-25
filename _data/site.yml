@@ -15,8 +15,8 @@ prototype_email: true
 video_youtube_id: ""
 video_title: "A welcome from the Greater Impact Learning Center"
 
-# Current campus photographs appear in the hero gallery. Experience images and future concepts are AI-generated and visibly labeled.
-alt_hero: "The current classroom at 5801 Security Boulevard"
+# The future classroom leads, followed by a current classroom photograph. Experience images and future concepts are AI-generated and visibly labeled.
+alt_hero: "AI-generated future classroom concept with predominantly African American children ages 2–5 and educators learning together"
 alt_family: "AI-generated illustration of parents and children practicing everyday skills together in a guided class"
 alt_summer: "Illustrative AI-generated image of elementary-age children building a craft-stick bridge at a summer program"
 
