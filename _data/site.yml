@@ -1,6 +1,6 @@
 # Campaign and contact settings. Photos are detected automatically when uploaded.
-name: Greater Impact Learning Center
-campaign_name: Greater Impact
+name: Greater Baltimore Learning Center
+campaign_name: Greater Impact Campaign
 campaign_url: https://givebutter.com/greater-impact-learning-center-campaign-upj3gm
 campaign_goal_text: "$1 million over two years"
 campaign_goal_amount: "$1 million"
@@ -13,12 +13,12 @@ prototype_email: true
 # Givebutter hosts both giving and campaign updates; no local signup form is needed.
 # Optional welcome video: YouTube ID only. Empty shows hero.jpg or its placeholder.
 video_youtube_id: ""
-video_title: "A welcome from the Greater Impact Learning Center"
+video_title: "A welcome from the Greater Baltimore Learning Center"
 
 # The future classroom leads, followed by a current classroom photograph. Experience images and future concepts are AI-generated and visibly labeled.
 alt_hero: "AI-generated future classroom concept with predominantly African American children ages 2–5 and educators learning together"
 alt_family: "AI-generated illustration of parents and children practicing everyday skills together in a guided class"
 alt_summer: "Illustrative AI-generated image of elementary-age children building a craft-stick bridge at a summer program"
 
-share_title: "Help open the Greater Impact Learning Center"
+share_title: "Help open the Greater Baltimore Learning Center"
 share_description: "Greater Baltimore Church’s $1 million, two-year capital campaign provides seed funding to open a faith-based, self-sustaining Learning Center. Financial and in-kind gifts welcome."

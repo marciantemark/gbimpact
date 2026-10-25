@@ -37,6 +37,7 @@ em{font-style:normal;color:var(--blue)}
 .site-header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 3px 12px #102b4e0a;max-height:100svh;overflow-y:auto}
 .header-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 14px;align-items:center;min-height:100px;padding-block:14px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;min-width:0}
+.brand>span{min-width:0}
 .brand-logo{width:56px;height:56px;flex:0 0 56px;object-fit:contain}
 .brand-name{display:block;font-size:26px;line-height:1.1;font-weight:800;letter-spacing:-1.2px;white-space:nowrap}
 .brand-sub{display:block;font-size:16px;margin-top:5px;line-height:1.3}
@@ -50,6 +51,7 @@ em{font-style:normal;color:var(--blue)}
 .menu-toggle[aria-expanded=true] span:last-child{transform:translateY(-4.5px) rotate(-45deg)}
 .mobile-nav{display:grid;padding-bottom:18px}
 .mobile-nav a{padding:12px 0;border-top:1px solid var(--line);font-size:20px;font-weight:700;text-decoration:none}
+@media(max-width:599px){.brand-name{font-size:23px;white-space:normal}}
 .hero{background:var(--ink);color:#fff;padding:48px 0 38px}
 .hero-grid{display:grid;gap:40px;align-items:center}
 .hero .eyebrow{color:var(--sky)}
