@@ -4,11 +4,9 @@
 title: Greater Impact Learning Center
 description: Faith-based learning and family support in Gwynn Oak, founded by Greater Baltimore Church.
 
-# [TBD: set to the final domain, for example https://example.org, once chosen]
-# For a project site before the custom domain is live, set url to
-# https://YOUR-ORG.github.io and baseurl to /YOUR-REPO
-url: ""
-baseurl: ""
+# GitHub Pages project site: https://marciantemark.github.io/gbimpact/
+url: "https://marciantemark.github.io"
+baseurl: "/gbimpact"
 
 markdown: kramdown
 permalink: pretty
