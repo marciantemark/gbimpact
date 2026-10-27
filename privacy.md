@@ -5,7 +5,7 @@ description: How this prototype handles information and external links.
 permalink: /privacy/
 ---
 <div class="wrap prose">
-<p class="eyebrow">Greater Impact / Privacy</p>
+<p class="eyebrow">Greater Baltimore Learning Center / Privacy</p>
 <h1>Your visit here.</h1>
 <p>This prototype has no signup form, advertising scripts, analytics, or browser storage. Hosting providers may keep ordinary server access logs.</p>
 <h2>Giving and updates</h2>

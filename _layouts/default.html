@@ -4,15 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.title %}{{ page.title | escape }} | Greater Impact{% else %}Greater Impact | Help open the Greater Impact Learning Center{% endif %}</title>
+  <title>{% if page.title %}{{ page.title | escape }} | {{ s.name | escape }}{% else %}{{ s.campaign_name | escape }} | Help open the {{ s.name | escape }}{% endif %}</title>
   <meta name="description" content="{{ page.description | default: s.share_description | escape }}">
   <meta name="theme-color" content="#ffffff">
   {% if site.url != '' %}<link rel="canonical" href="{{ page.url | absolute_url }}">{% endif %}
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Greater Impact">
+  <meta property="og:site_name" content="{{ s.name | escape }}">
   <meta property="og:title" content="{{ page.title | default: s.share_title | escape }}">
   <meta property="og:description" content="{{ page.description | default: s.share_description | escape }}">
-  {% if site.url != '' %}<meta property="og:url" content="{{ page.url | absolute_url }}"><meta property="og:image" content="{{ '/assets/images/share.jpg' | absolute_url }}"><meta property="og:image:alt" content="Greater Impact. Faith-based learning and family support in Gwynn Oak."><meta name="twitter:card" content="summary_large_image">{% endif %}
+  {% if site.url != '' %}<meta property="og:url" content="{{ page.url | absolute_url }}"><meta property="og:image" content="{{ '/assets/images/share.jpg' | absolute_url }}"><meta property="og:image:alt" content="Greater Baltimore Learning Center. Greater Impact Campaign: faith-based learning and family support in Gwynn Oak."><meta name="twitter:card" content="summary_large_image">{% endif %}
   <link rel="icon" href="{{ '/assets/images/gbc-logo.png' | relative_url }}" type="image/png">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
@@ -29,16 +29,16 @@
     <symbol id="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/></symbol>
   </defs></svg>
   <header class="site-header"><div class="wrap header-inner">
-    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Greater Impact Learning Center home, founded by Greater Baltimore Church"><img class="brand-logo" src="{{ '/assets/images/gbc-logo.png' | relative_url }}" alt="" width="64" height="64" decoding="async"><span><span class="brand-name">Greater Impact</span><span class="brand-sub">Learning Center</span></span></a>
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Greater Baltimore Learning Center home, founded by Greater Baltimore Church"><img class="brand-logo" src="{{ '/assets/images/gbc-logo.png' | relative_url }}" alt="" width="64" height="64" decoding="async"><span><span class="brand-name">Greater Baltimore</span><span class="brand-sub">Learning Center</span></span></a>
     <nav class="desktop-nav" aria-label="Main navigation"><a href="{{ '/#why' | relative_url }}">Why here</a><a href="{{ '/#the-center' | relative_url }}">The center</a><a href="{{ '/#businesses' | relative_url }}">For businesses</a></nav>
-    <a class="button button-dark header-give" href="{{ s.campaign_url }}" data-give>Give <span aria-hidden="true">↗</span></a>
+    <a class="button button-dark header-give" href="{{ s.campaign_url }}" data-give>Give to Greater Impact <span aria-hidden="true">↗</span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation"><span></span><span></span></button>
   </div><nav class="mobile-nav wrap" id="mobile-nav" aria-label="Mobile navigation" hidden><a href="{{ '/#why' | relative_url }}">Why here</a><a href="{{ '/#the-center' | relative_url }}">The center</a><a href="{{ '/#businesses' | relative_url }}">For businesses</a><a href="{{ '/#updates' | relative_url }}">Get updates</a></nav></header>
   <main id="main" tabindex="-1">{{ content }}</main>
   <footer class="site-footer"><div class="wrap">
-    <div class="footer-top"><a class="footer-brand" href="{{ '/' | relative_url }}" aria-label="Greater Impact Learning Center home, founded by Greater Baltimore Church"><img class="footer-logo" src="{{ '/assets/images/gbc-logo.png' | relative_url }}" alt="" width="64" height="64" loading="lazy" decoding="async"><span class="footer-name">Greater Impact<span>Learning Center</span></span></a><p>Faith-based learning. Family support.<br>Rooted in Gwynn Oak.</p><nav aria-label="Footer"><a href="{{ '/faq/' | relative_url }}">Questions</a><a href="{{ '/privacy/' | relative_url }}">Privacy</a><a href="{{ '/#updates' | relative_url }}">Get updates <span aria-hidden="true">↗</span></a></nav></div>
+    <div class="footer-top"><a class="footer-brand" href="{{ '/' | relative_url }}" aria-label="Greater Baltimore Learning Center home, founded by Greater Baltimore Church"><img class="footer-logo" src="{{ '/assets/images/gbc-logo.png' | relative_url }}" alt="" width="64" height="64" loading="lazy" decoding="async"><span class="footer-name">Greater Baltimore<span>Learning Center</span></span></a><p>Faith-based learning. Family support.<br>Rooted in Gwynn Oak.</p><nav aria-label="Footer"><a href="{{ '/faq/' | relative_url }}">Questions</a><a href="{{ '/privacy/' | relative_url }}">Privacy</a><a href="{{ '/#updates' | relative_url }}">Get updates <span aria-hidden="true">↗</span></a></nav></div>
     <div class="footer-bottom"><p>Founded by Greater Baltimore Church of Christ.<br>The Learning Center is being established as a separate nonprofit with its own board.</p><p>Not yet licensed or enrolling.<br>Opening is subject to Maryland licensing.</p></div>
-    <p class="campaign-footer">Greater Impact is a capital campaign of {{ s.campaign_recipient }}, raising seed money on behalf of the Learning Center.</p>
+    <p class="campaign-footer">{{ s.campaign_name }} is {{ s.campaign_recipient }}’s capital campaign, raising seed money to open the {{ s.name }}.</p>
     {% if s.prototype_email %}<p class="prototype-note">Design prototype · Photo spaces and the example contact address will be replaced before launch.</p>{% endif %}
   </div></footer>
   <div class="mobile-give"><div><strong>$1M · two years</strong><span>Help open the center.</span></div><a class="button button-primary" href="{{ s.campaign_url }}" data-give>Give <span aria-hidden="true">↗</span></a></div>

@@ -1,6 +1,15 @@
 (() => {
   'use strict';
 
+  // Keep anchor and keyboard scrolling clear of the persistent header.
+  const headerInner = document.querySelector('.header-inner');
+  if (headerInner) {
+    const updateHeaderHeight = () => document.documentElement.style.setProperty('--header-height', headerInner.getBoundingClientRect().height + 'px');
+    updateHeaderHeight();
+    if ('ResizeObserver' in window) new ResizeObserver(updateHeaderHeight).observe(headerInner);
+    else window.addEventListener('resize', updateHeaderHeight);
+  }
+
   // Copy each tag independently, preserving partial UTM sets and existing URL params.
   const incoming = new URLSearchParams(window.location.search);
   const tags = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
