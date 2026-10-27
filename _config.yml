@@ -4,9 +4,9 @@
 title: Greater Baltimore Learning Center
 description: Faith-based learning and family support in Gwynn Oak, founded by Greater Baltimore Church.
 
-# GitHub Pages project site: https://marciantemark.github.io/gbimpact/
-url: "https://marciantemark.github.io"
-baseurl: "/gbimpact"
+# Custom domain from CNAME. Keep baseurl empty for a root-domain site.
+url: "https://gbimpact.org"
+baseurl: ""
 
 markdown: kramdown
 permalink: pretty
