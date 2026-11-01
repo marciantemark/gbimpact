@@ -150,7 +150,9 @@ em{font-style:normal;color:var(--blue)}
 .learning{background:var(--surface)}
 .learning .eyebrow{color:var(--blue)}
 .learning h2{max-width:1000px}
-.neighborhood-welcome{font-size:22px;line-height:1.55;margin-top:24px;max-width:760px}
+.neighborhood-welcome{font-size:22px;line-height:1.55;margin-top:24px}
+.values-list{margin-top:14px;padding-left:1.25em}
+.values-list li+li{margin-top:8px}
 .program-grid{display:grid;gap:32px;margin-top:42px}
 .program-grid article{border-top:2px solid var(--line);padding-top:24px}
 .program-number{display:block;color:var(--red);font-size:22px;font-weight:700;margin-bottom:14px}
