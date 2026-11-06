@@ -23,13 +23,13 @@ Open http://127.0.0.1:4000. To generate the static site, run `jekyll build`; out
 | Content | Location |
 | --- | --- |
 | Page story, opening dates, program details | `index.html` |
-| Campaign goal and recipient, URL, business email, video ID, photo descriptions | `_data/site.yml` |
+| Campaign goal and recipient, URL, video ID, photo descriptions | `_data/site.yml` |
 | Colors, spacing, responsive layouts | `assets/css/style.css` |
 | Header, footer, social metadata | `_layouts/default.html` |
 | Givebutter attribution, mobile navigation, video playback | `assets/js/main.js` |
 | Questions and privacy | `faq.md`, `privacy.md` |
 
-The business email uses the reserved `.example` domain. Replace it with a real monitored address, then set `prototype_email: false` to remove the prototype labels. Giving and campaign updates both go to the supplied Givebutter page; there is no local email database or fake signup form.
+The site does not publish an email contact. Giving and campaign updates both go to the supplied Givebutter page; there is no local email database or fake signup form.
 
 ## Add real photos or video
 
