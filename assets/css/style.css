@@ -55,6 +55,8 @@ em{font-style:normal;color:var(--blue)}
 .hero{background:var(--ink);color:#fff;padding:48px 0 38px}
 .hero-grid{display:grid;gap:40px;align-items:center}
 .hero .eyebrow{color:var(--sky)}
+.hero-center-name{font-size:clamp(23px,2.3vw,30px);font-weight:750;line-height:1.2;margin:8px 0 6px}
+.hero-location{font-size:16px;font-weight:500;line-height:1.5;margin:0 0 28px}
 .hero h1{max-width:760px}
 .hero h1 em{color:var(--sky)}
 .hero-intro{max-width:560px;margin-top:26px;font-size:22px;line-height:1.55;color:#e6eff8}
@@ -225,6 +227,10 @@ em{font-style:normal;color:var(--blue)}
 .prose details{border-bottom:1px solid var(--line);padding-bottom:20px;margin-top:22px}
 .prose summary{font-size:22px;line-height:1.5;font-weight:700;cursor:pointer;min-height:48px;padding-block:10px}
 .prose details p{margin-top:15px}
+@media(max-width:768px){
+  .hero-center-name{font-size:23px}
+  .hero-location{font-size:15px;margin-bottom:22px}
+}
 @media(min-width:600px){
   .playground-comparison{grid-template-columns:repeat(2,minmax(0,1fr))}
   .wrap{width:min(1280px,calc(100% - 80px))}
