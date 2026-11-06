@@ -6,10 +6,6 @@ campaign_goal_text: "$1 million over two years"
 campaign_goal_amount: "$1 million"
 campaign_recipient: "Greater Baltimore Church"
 
-# Prototype-only contact. Replace with the real monitored address before launch.
-email: partnerships@greaterimpact.example
-prototype_email: true
-
 # Givebutter hosts both giving and campaign updates; no local signup form is needed.
 # Optional welcome video: YouTube ID only. Empty shows hero.jpg or its placeholder.
 video_youtube_id: ""
