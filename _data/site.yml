@@ -2,12 +2,14 @@
 name: Greater Baltimore Learning Center
 campaign_name: Greater Impact Campaign
 campaign_url: https://givebutter.com/greater-impact-learning-center-campaign-upj3gm
+# Bank-account (ACH) gifts go through the church giving page; record them in Givebutter as offline transactions so campaign totals stay accurate.
+ach_url: https://greaterbaltimorechurch.churchcenter.com/giving/to/greater-impact-learning-center-campaign
 campaign_goal_text: "$1 million over two years"
 campaign_goal_amount: "$1 million"
 campaign_recipient: "Greater Baltimore Church"
 
 # Givebutter hosts both giving and campaign updates; no local signup form is needed.
-# Optional welcome video: YouTube ID only. Empty shows hero.jpg or its placeholder.
+# Optional welcome video: YouTube ID only. Empty shows the photo or its placeholder.
 video_youtube_id: ""
 video_title: "A welcome from the Greater Baltimore Learning Center"
 

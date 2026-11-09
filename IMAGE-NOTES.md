@@ -1,5 +1,7 @@
 # Prototype image notes
 
+> Archive of prompts. Superseded and unused images named below (classroom concept v1–v3, summer camp concepts, playground files, `family-illustration.jpg`) were removed from the repo and remain in git history. Active images are listed in the README.
+
 Created with the built-in image generation tool. These are illustrative synthetic images, not photographs of actual children, staff, or the Greater Impact Learning Center. Visible captions and alt text identify them as illustrative. JPEG derivatives are encoded for web delivery without changing their composition.
 
 ## Saved assets

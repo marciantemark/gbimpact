@@ -196,7 +196,10 @@ em{font-style:normal;color:var(--blue)}
 .giving-card>p:first-child{font-size:18px}
 .campaign-goal{font-size:58px;font-weight:800;letter-spacing:-.06em;line-height:1.2;margin:13px 0 24px}
 .campaign-duration{font-size:22px;line-height:1.6}
-.giving-card .button{margin-top:26px;width:100%}
+.giving-card .button{width:100%}
+.give-options{display:grid;gap:14px;margin-top:26px}
+.button-ghost{border-color:#fff;color:#fff}
+.button-ghost:hover{background:#fff;color:var(--ink)}
 .giving-provider{font-size:16px;line-height:1.5;margin-top:17px}
 .giving-tax{font-size:16px;line-height:1.5;margin-top:17px}
 .business-grid{display:grid;align-items:center;gap:30px}
