@@ -1,5 +1,5 @@
 /* Campaign typography: generous, readable type across screen sizes. */
-:root{--canvas:#fff;--ink:#102b4e;--muted:#455c73;--blue:#245e9b;--red:#b5121b;--sky:#b9e2ff;--surface:#f0f6fb;--line:#cbdbe8;--sans:Arial,Helvetica,sans-serif}
+:root{--canvas:#fff;--ink:#102b4e;--muted:#2f445c;--blue:#245e9b;--red:#b5121b;--sky:#b9e2ff;--surface:#f0f6fb;--line:#cbdbe8;--sans:Arial,Helvetica,sans-serif}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-height,170px) + 20px);scroll-padding-bottom:110px}
 body{margin:0;background:var(--canvas);color:var(--ink);font:21px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
@@ -317,16 +317,39 @@ em{font-style:normal;color:var(--blue)}
 
 /* Desktop readability: larger body and small text on wide screens; mobile and tablet unchanged. */
 @media(min-width:1000px){
-  body{font-size:22px}
-  .program-grid p,.tuition-plan p,.funding-grid p,.capacity-intro>p:last-child,.capacity-takeaway,.county-intro>p:last-child,.updates h2+p,.classroom-comparison figcaption,.prose p,.prose li{font-size:22px}
-  .section-heading>p,.need h2+p,.business h2+p,.building-story,.neighborhood-welcome,.final-ask h2+p,.campaign-duration,.hero-intro,.community-stat>.stat-value+p{font-size:24px}
-  .eyebrow,.source-note,.image-disclosure,.opening-note,.text-link,.vision-label,.capacity-label,.giving-card>p:first-child,.business-contact>p,.footer-top>p,.footer-top nav,.footer-bottom,.campaign-footer,.hero-campaign{font-size:20px}
-  .button{font-size:19px}
-  .hero-location,.hero-media figcaption,.chart-unit,.readiness-context,.giving-provider,.giving-tax,.readiness-comparison>figcaption,.stat-geography,.footer-name>span,.prose .eyebrow,.tuition-plan .eyebrow{font-size:18px}
-  .desktop-nav,.header-give{font-size:17px}
-  .program-grid p{max-width:460px}
+  body{font-size:24px}
+  .program-grid p,.tuition-plan p,.funding-grid p,.capacity-intro>p:last-child,.capacity-takeaway,.county-intro>p:last-child,.updates h2+p,.classroom-comparison figcaption,.prose p,.prose li{font-size:24px}
+  .section-heading>p,.need h2+p,.business h2+p,.building-story,.neighborhood-welcome,.final-ask h2+p,.campaign-duration,.hero-intro,.community-stat>.stat-value+p{font-size:26px}
+  .eyebrow,.source-note,.image-disclosure,.opening-note,.text-link,.vision-label,.capacity-label,.giving-card>p:first-child,.business-contact>p,.footer-top>p,.footer-top nav,.footer-bottom,.campaign-footer,.hero-campaign{font-size:22px}
+  .button{font-size:20px}
+  .hero-location,.hero-media figcaption,.chart-unit,.readiness-context,.giving-provider,.giving-tax,.readiness-comparison>figcaption,.stat-geography,.footer-name>span,.prose .eyebrow,.tuition-plan .eyebrow{font-size:20px}
+  .desktop-nav,.header-give{font-size:18px}
+  .program-grid p{max-width:500px}
   .county-intro>p:last-child{max-width:530px}
-  .hero-intro,.opening-note{max-width:600px}
-  .building-story,.section-heading>p{max-width:620px}
-  .business h2+p,.updates h2+p,.need h2+p,.final-ask h2+p{max-width:670px}
+  .hero-intro,.opening-note{max-width:640px}
+  .building-story,.section-heading>p{max-width:700px}
+  .business h2+p,.updates h2+p,.need h2+p,.final-ask h2+p{max-width:720px}
+}
+
+/* Emphasis and structure: darker secondary text, highlighted key facts, values as cards. */
+.hl{font-weight:800;color:var(--ink);background:linear-gradient(transparent 58%,#b9e2ffcc 0);padding-inline:.08em}
+.neighborhood-welcome{max-width:900px}
+.values-list{list-style:none;padding:0;margin-top:36px;display:grid;gap:20px}
+.values-list li{background:#fff;border-top:5px solid var(--blue);padding:26px 28px;font-size:21px;line-height:1.55;color:var(--ink)}
+.values-list li+li{margin-top:0}
+.values-list li:nth-child(even){border-top-color:var(--red)}
+.values-list li strong{display:block;font-size:28px;line-height:1.2;letter-spacing:-.02em;margin-bottom:10px;color:var(--blue)}
+.values-list li:nth-child(even) strong{color:var(--red)}
+.values-list+p{max-width:900px;margin-top:34px;padding-left:22px;border-left:4px solid var(--red);font-weight:700;color:var(--ink)}
+.program-grid h3{font-weight:800}
+.funding-grid h4{font-weight:800}
+@media(min-width:760px){.values-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1000px){
+  .values-list li{font-size:23px;padding:30px 34px}
+  .values-list li strong{font-size:32px}
+  .values-list+p{font-size:24px}
+  .program-grid h3{font-size:34px;max-width:440px}
+  .program-grid h3>span{font-size:22px}
+  .funding-grid h4{font-size:28px}
+  .capacity-intro h3,.county-intro h3,.tuition-plan h3{font-size:36px}
 }
