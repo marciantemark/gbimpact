@@ -311,3 +311,19 @@ em{font-style:normal;color:var(--blue)}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 @media print{.site-header,.mobile-give,.skip-link{display:none!important}.hero,.final-ask,.site-footer{background:#fff;color:#102b4e}.hero p,.hero h1 em,.site-footer p{color:#102b4e}.section,.hero,.final-ask{padding-block:30px}.site-footer{padding-bottom:0}.hero-photo{height:250px}}
+
+/* Desktop readability: larger body and small text on wide screens; mobile and tablet unchanged. */
+@media(min-width:1000px){
+  body{font-size:22px}
+  .program-grid p,.tuition-plan p,.funding-grid p,.capacity-intro>p:last-child,.capacity-takeaway,.county-intro>p:last-child,.updates h2+p,.classroom-comparison figcaption,.prose p,.prose li{font-size:22px}
+  .section-heading>p,.need h2+p,.business h2+p,.building-story,.neighborhood-welcome,.final-ask h2+p,.campaign-duration,.hero-intro,.community-stat>.stat-value+p{font-size:24px}
+  .eyebrow,.source-note,.image-disclosure,.opening-note,.text-link,.vision-label,.capacity-label,.giving-card>p:first-child,.business-contact>p,.footer-top>p,.footer-top nav,.footer-bottom,.campaign-footer,.hero-campaign{font-size:20px}
+  .button{font-size:19px}
+  .hero-location,.hero-media figcaption,.chart-unit,.readiness-context,.giving-provider,.giving-tax,.readiness-comparison>figcaption,.stat-geography,.footer-name>span,.prose .eyebrow,.tuition-plan .eyebrow{font-size:18px}
+  .desktop-nav,.header-give{font-size:17px}
+  .program-grid p{max-width:460px}
+  .county-intro>p:last-child{max-width:530px}
+  .hero-intro,.opening-note{max-width:600px}
+  .building-story,.section-heading>p{max-width:620px}
+  .business h2+p,.updates h2+p,.need h2+p,.final-ask h2+p{max-width:670px}
+}
