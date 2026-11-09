@@ -14,7 +14,6 @@ permalink: pretty
 exclude:
   - README.md
   - LAUNCH-CHECKLIST.md
-  - ASSETS-SHOOT-LIST.md
   - IMAGE-NOTES.md
   - .pages.yml
   - Gemfile

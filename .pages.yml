@@ -8,6 +8,7 @@ content:
       - { name: name, label: Learning Center name, type: string }
       - { name: campaign_name, label: Campaign name, type: string }
       - { name: campaign_url, label: Givebutter page (gifts and updates), type: string }
+      - { name: ach_url, label: Bank transfer (ACH) giving page, type: string }
       - { name: campaign_goal_text, label: Campaign goal description, type: string }
       - { name: campaign_goal_amount, label: Campaign goal amount, type: string }
       - { name: campaign_recipient, label: Gift recipient, type: string }

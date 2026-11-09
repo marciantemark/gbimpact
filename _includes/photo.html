@@ -1,7 +1,0 @@
-{% assign photo_path = '/assets/images/' | append: include.file %}
-{% assign photo_found = site.static_files | where: 'path', photo_path | first %}
-{% if photo_found %}
-<img src="{{ photo_path | relative_url }}" alt="{{ include.alt | escape }}" width="800" height="640" {% if include.priority %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
-{% else %}
-<div class="photo-placeholder"><span class="placeholder-label">Photo {% if include.priority %}/ video {% endif %}to come</span><svg class="placeholder-icon" aria-hidden="true"><use href="#{{ include.icon }}"/></svg><span class="placeholder-title">{{ include.title }}</span><span class="placeholder-detail">{{ include.detail }}</span><span class="placeholder-file">{{ include.file }}</span></div>
-{% endif %}
