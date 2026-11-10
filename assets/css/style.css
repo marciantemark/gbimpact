@@ -315,7 +315,7 @@ em{font-style:normal;color:var(--blue)}
   .mobile-give .button{font-size:15px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
-@media print{.site-header,.mobile-give,.skip-link{display:none!important}.hero,.final-ask,.site-footer{background:#fff;color:#102b4e}.hero p,.hero h1 em,.site-footer p{color:#102b4e}.section,.hero,.final-ask{padding-block:30px}.site-footer{padding-bottom:0}.hero-photo{height:250px}}
+@media print{.site-header,.mobile-give,.skip-link,.top-strip{display:none!important}.hero,.final-ask,.site-footer{background:#fff;color:#102b4e}.hero p,.hero h1 em,.site-footer p{color:#102b4e}.section,.hero,.final-ask{padding-block:30px}.site-footer{padding-bottom:0}.hero-photo{height:250px}}
 
 /* Desktop readability: larger body and small text on wide screens; mobile and tablet unchanged. */
 @media(min-width:1000px){
@@ -356,3 +356,10 @@ em{font-style:normal;color:var(--blue)}
   .funding-grid h4{font-size:28px}
   .capacity-intro h3,.county-intro h3,.tuition-plan h3{font-size:36px}
 }
+
+/* Top strip: quick path to bank-transfer giving. Scrolls away; the sticky header and bottom bar remain. */
+.top-strip{background:var(--sky);color:var(--ink);font-size:16px;line-height:1.35;text-align:center;padding:10px 0}
+.top-strip a{font-weight:800;white-space:nowrap}
+.top-strip a:hover{text-decoration-thickness:3px}
+@media(min-width:1000px){.top-strip{font-size:19px;padding:12px 0}}
+@media(max-width:599px){.top-strip .ts-lead{display:none}}
