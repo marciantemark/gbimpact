@@ -363,3 +363,23 @@ em{font-style:normal;color:var(--blue)}
 .top-strip a:hover{text-decoration-thickness:3px}
 @media(min-width:1000px){.top-strip{font-size:19px;padding:12px 0}}
 @media(max-width:599px){.top-strip .ts-lead{display:none}}
+
+/* Bank transfer (ACH) dialog: centered card on desktop, full-screen sheet on phones. */
+.ach-open{overflow:hidden}
+.ach-dialog{padding:0;border:0;border-radius:8px;background:#fff;color:var(--ink);width:min(560px,calc(100% - 32px));height:min(780px,calc(100dvh - 48px));max-width:none;max-height:none;overflow:hidden;box-shadow:0 24px 70px rgba(16,43,78,.35)}
+.ach-dialog[open]{display:flex;flex-direction:column}
+.ach-dialog::backdrop{background:rgba(16,43,78,.6)}
+.ach-bar{display:flex;align-items:center;gap:14px;padding:10px 8px 10px 20px;border-bottom:1px solid var(--line);background:var(--surface);flex:none}
+.ach-bar h2{font-size:19px;line-height:1.25;letter-spacing:-.01em;margin-right:auto}
+.ach-newtab{font-size:16px;font-weight:700;white-space:nowrap}
+.ach-close{flex:none;width:48px;height:48px;border:0;border-radius:4px;background:transparent;color:var(--ink);font-size:34px;line-height:1}
+.ach-close:hover{background:var(--line)}
+.ach-frame{flex:1;width:100%;min-height:0;border:0;background:#fff}
+.ach-loading{position:absolute;top:50%;left:0;right:0;text-align:center;font-size:18px;color:var(--muted);pointer-events:none}
+@media(max-width:599px){
+  .ach-dialog{width:100%;height:100dvh;max-height:none;border-radius:0}
+  .ach-bar{padding:6px 4px 6px 14px;padding-top:max(6px,env(safe-area-inset-top))}
+  .ach-bar h2{font-size:17px}
+  .ach-newtab{font-size:15px}
+  .ach-frame{padding-bottom:env(safe-area-inset-bottom)}
+}
