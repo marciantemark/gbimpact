@@ -51,6 +51,62 @@
     });
   }
 
+  // Bank transfer (ACH): open the church giving page in an in-page dialog.
+  // Centered card on desktop, full-screen sheet on phones. The links keep their
+  // normal href, so without JS (or with a modified click) they still navigate.
+  const achLinks = document.querySelectorAll('a[data-ach]');
+  if (achLinks.length && 'HTMLDialogElement' in window) {
+    const dialog = document.createElement('dialog');
+    dialog.className = 'ach-dialog';
+    dialog.setAttribute('aria-labelledby', 'ach-title');
+    dialog.innerHTML =
+      '<div class="ach-bar">' +
+        '<h2 id="ach-title">Give by bank transfer (ACH)</h2>' +
+        '<a class="ach-newtab" target="_blank" rel="noopener">Open in new tab <span aria-hidden="true">↗</span></a>' +
+        '<button class="ach-close" type="button" aria-label="Close">×</button>' +
+      '</div>' +
+      '<p class="ach-loading" role="status">Loading secure giving page…</p>' +
+      '<iframe class="ach-frame" title="Give by bank transfer (ACH) — Greater Baltimore Church giving" allow="payment" referrerpolicy="strict-origin-when-cross-origin"></iframe>';
+    document.body.appendChild(dialog);
+    const frame = dialog.querySelector('.ach-frame');
+    const newTab = dialog.querySelector('.ach-newtab');
+    const loading = dialog.querySelector('.ach-loading');
+    let opener = null;
+    let pushed = false;
+
+    frame.addEventListener('load', () => { if (frame.src) loading.hidden = true; });
+
+    const open = link => {
+      opener = link;
+      newTab.href = link.href;
+      loading.hidden = false;
+      frame.src = link.href;
+      document.documentElement.classList.add('ach-open');
+      dialog.showModal();
+      // Let the phone Back button close the sheet instead of leaving the site.
+      history.pushState({ ach: true }, '');
+      pushed = true;
+    };
+    const close = () => { if (dialog.open) dialog.close(); };
+
+    dialog.addEventListener('close', () => {
+      document.documentElement.classList.remove('ach-open');
+      frame.removeAttribute('src');
+      if (pushed) { pushed = false; history.back(); }
+      if (opener) opener.focus();
+    });
+    window.addEventListener('popstate', () => { if (pushed) { pushed = false; close(); } });
+    dialog.querySelector('.ach-close').addEventListener('click', close);
+    // Click on the dimmed backdrop (outside the card) closes it.
+    dialog.addEventListener('click', event => { if (event.target === dialog) close(); });
+
+    achLinks.forEach(link => link.addEventListener('click', event => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      open(link);
+    }));
+  }
+
   document.querySelectorAll('button[data-video]').forEach(button => {
     button.addEventListener('click', () => {
       const frame = document.createElement('iframe');
